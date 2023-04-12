@@ -232,10 +232,10 @@ static int cfgevals_impl(CFGFILE *fd,
         if (swaptmp == NULL)
           return 1;
         memcpy(swaptmp, tail + 1, suffixsize);
-        memcpy(*b, tmp, tmpsize);
         memcpy(*b + tmpsize, swaptmp, suffixsize);
         free(swaptmp);
       }
+      memcpy(*b, tmp, tmpsize);
       --(*b);
       *evalue = *b + tmpsize + suffixsize;
       return 0;
