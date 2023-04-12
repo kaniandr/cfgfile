@@ -209,7 +209,7 @@ static int cfgevals_impl(CFGFILE *fd,
       char *tmp = *b + 2;
       char *swaptmp = NULL;
       int tmpsize = 0;
-      int suffixsize = *evalue - tail;      
+      int suffixsize = *evalue - tail;
       int tailsize = tail - *b + 1;
       *tail = 0;
       if (cfgfinds(fd, tmp, &tmp) != 0)
@@ -218,13 +218,13 @@ static int cfgevals_impl(CFGFILE *fd,
       if (prefixsize + suffixsize + tmpsize > *size) {
         char *newvalue = (char *)realloc(*value,
           prefixsize + suffixsize + tmpsize + CFG_BUFFER_SIZE);
-	if (newvalue == NULL)
-	  return 1;
+        if (newvalue == NULL)
+          return 1;
         *value = newvalue;
         *b = *value + prefixsize;
         tail = *b + tailsize - 1;
-    	*evalue = tail + suffixsize;
-	*size = 
+        *evalue = tail + suffixsize;
+        *size =
           prefixsize + suffixsize + tmpsize + CFG_BUFFER_SIZE;
       }
       if (tailsize != tmpsize) {
